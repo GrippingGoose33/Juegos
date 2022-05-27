@@ -1,3 +1,4 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -5,6 +6,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Home from './Home';
+import Menu from './Menu';
+import Juego from './Juego';
+
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -27,7 +32,7 @@ export default function App() {
           component={Root}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Settings" component={SettingsScreen}/>
+        <Stack.Screen name="Juego" component={Juego}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
