@@ -7,7 +7,6 @@ function Home({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.textH1}>Videojuegos Moviles</Text>
-            <Text style={styles.text}>Encontraras  varios tipos de videojuegos simples aqui</Text>
             <Button 
             title="ir a Menu"
             onPress={() => navigation.navigate('Menu')}

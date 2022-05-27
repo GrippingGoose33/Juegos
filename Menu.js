@@ -12,7 +12,7 @@ function Store({navigation}) {
             <ScrollView>
             <View style = {styles.containerBox}>
                 {
-                objetos.map((manager, v)=> (
+                manager.map((manager, v)=> (
                     <Box key={v}
                     img = {manager.img}
                     id = {manager.id}
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#F50C76'
+        backgroundColor: '#0CCBF5'
     },
 
     containerBox: {
