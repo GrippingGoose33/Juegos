@@ -1,26 +1,26 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
-import objetos from'./objetos';
+import manager from'./manager';
 
 function Box({description, img}) {
 
     const navigation = useNavigation();
     return (
         <View style={styles.root}>
-            <Text>{objetos.title}</Text>
-                    <Image
-                    style={styles.tinyLogo}
-                        source={{uri:img}}
-                    />
+            <Text style={styles.text}>{manager.title}</Text>
+            <Image
+                style={styles.tinyLogo}
+                source={{uri:img}}
+            />
 
-                    <Button
-                        color="#455q64"
-                        title="Detalles"
-                        onPress={() => navigation.navigate('Juego',{
-                        description: description,
-                        })}
-                    />
+            <Button
+                color="#455q64"
+                title="Detalles"
+                onPress={() => navigation.navigate('Juego',{
+                description: description,
+                })}
+            />
         </View>
     );
 }
@@ -41,7 +41,12 @@ const styles = StyleSheet.create({
     tinyLogo: {
         width: 80,
         height: 80,
-      },
+    },
+
+    text: {
+        flex: 1,
+        alignItems: "center"
+    }
 })
 
 export default Box;
