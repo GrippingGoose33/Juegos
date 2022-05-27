@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import './styles.js';
 import Box from './Box';
-import objetos from './objetos';
+import manager from './manager';
 
 
 function Store({navigation}) {
@@ -12,13 +12,13 @@ function Store({navigation}) {
             <ScrollView>
             <View style = {styles.containerBox}>
                 {
-                objetos.map((objetos, v)=> (
+                objetos.map((manager, v)=> (
                     <Box key={v}
-                    img = {objetos.img}
-                    id = {objetos.id}
-                    description = {objetos.description}
-                    stock = {objetos.stock}
-                    title = {objetos.title}
+                    img = {manager.img}
+                    id = {manager.id}
+                    description = {manager.description}
+                    stock = {manager.stock}
+                    title = {manager.title}
                 />
                 
                 ))

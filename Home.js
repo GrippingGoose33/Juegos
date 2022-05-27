@@ -10,7 +10,7 @@ function Home({navigation}) {
             <Text style={styles.text}>Encontraras  varios tipos de videojuegos simples aqui</Text>
             <Button 
             title="ir a Menu"
-            onPress={() => navigation.navigate('Tienda')}
+            onPress={() => navigation.navigate('Menu')}
             />
         </View>
     );

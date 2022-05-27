@@ -8,7 +8,7 @@ function Box({description, img}) {
     const navigation = useNavigation();
     return (
         <View style={styles.root}>
-            <Text>Objeto# {objetos.id}</Text>
+            <Text>{objetos.title}</Text>
                     <Image
                     style={styles.tinyLogo}
                         source={{uri:img}}
