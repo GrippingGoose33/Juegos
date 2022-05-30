@@ -7,9 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import Home from './Home';
 import Menu from './Menu';
-import Juego from './Juego';
-
-
+import GMN from './GMN';
+import PPT from './PPT';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -32,7 +31,9 @@ export default function App() {
           component={Root}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Juego" component={Juego}/>
+        <Stack.Screen name="GMN" component={GMN}/>
+        <Stack.Screen name="PPT" component={PPT}/>
+        <Stack.Screen name="Proximamente" component={Proximamente}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
