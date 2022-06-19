@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
 import manager from'./manager';
 
-function Box({description, img}) {
+function Box({description, img, id}) {
 
     const navigation = useNavigation();
     return (
@@ -17,7 +17,7 @@ function Box({description, img}) {
             <Button
                 color="#455q64"
                 title="Detalles"
-                onPress={() => navigation.navigate('Juego',{
+                onPress={() => navigation.navigate( id ,{
                 description: description,
                 })}
             />
