@@ -13,13 +13,11 @@ function Box({description, img, id}) {
                 style={styles.tinyLogo}
                 source={{uri:img}}
             />
-
+            <Text>{description}</Text>
             <Button
                 color="#455q64"
-                title="Detalles"
-                onPress={() => navigation.navigate( {id} ,{
-                description: description,
-                })}
+                title={title}
+                onPress={() => navigation.navigate( {id} )}
             />
         </View>
     );

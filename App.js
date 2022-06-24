@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './Home';
 import Menu from './Menu';
 import GMN from './GMN';
+import GYN from './GYN';
 import PPT from './PPT';
 
 const Stack = createNativeStackNavigator();
@@ -31,8 +32,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="GMN" component={GMN}/>
+        <Stack.Screen name="GYN" component={GYN}/>
         <Stack.Screen name="PPT" component={PPT}/>
-        <Stack.Screen name="Proximamente" component={Proximamente}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
