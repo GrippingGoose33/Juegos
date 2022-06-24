@@ -1,9 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
+import GMN from './GMN';
+import GYN from './GYN';
+import PPT from './PPT';
 import manager from'./manager';
 
-function Box({description, img, id}) {
+function Box({description, img, id, title}) {
 
     const navigation = useNavigation();
     return (
@@ -17,7 +20,7 @@ function Box({description, img, id}) {
             <Button
                 color="#455q64"
                 title={title}
-                onPress={() => navigation.navigate( {id} )}
+                onPress={() => navigation.navigate( GMN )}
             />
         </View>
     );
