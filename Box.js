@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, View, Text, Button, Image} from 'react-native';
 import GMN from './GMN';
 import GYN from './GYN';
-import PPT from './PPT';
+import PPT from './PPT';    
 import manager from'./manager';
 
 function Box({description, img, id, title}) {

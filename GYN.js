@@ -35,21 +35,16 @@ function calculateText(number, random) {
 
 
 function GYN(props) {
-    const [number, setNumber] = useState('');
     const [message, setMessage] = useState('');
     const [guessList, setGuessList] = useState([]);
-    const [win, setWin] = useState(false);
     const [count, setCount] = useState(0);
     const [max, setMax] = useState(100);
     const [min, setMin] = useState(1)
     const random = generateRandomNumber(max, min);
 
-    const handleOnChange = (newNumber) => {
-        setNumber(newNumber);
-    }
-
     const handleOnPress = () =>{
         const numRand = parseInt(random);
+        const value = parseInt(value);
         const text = calculateText(num, numRand);
 
         if (value === 1) {
@@ -63,7 +58,7 @@ function GYN(props) {
         setNumber("");
         setMessage(text);
         setGuessList([
-            num,
+            numRand,
             ...guessList
         ]);
         setCount(count + 1);
@@ -74,13 +69,8 @@ function GYN(props) {
 
     return (
         <View style={styles.game}>
-            <TextInput 
-                style={styles.input}
-                autoFocus
-                placeholder="Guess My Number"
-                onChangeText = {handleOnChange}
-                defaultValue = {number}
-            />
+
+            <Text>Tu numerro es {random}?</Text>
 
             <Button
                 title="Mayor"
@@ -92,14 +82,6 @@ function GYN(props) {
                 onPress={handleOnPress}
                 value = {2}
             />
-            {
-                win?
-                    <Text>
-                        Felicidades, lo has adivinado en {count} intentos
-                    </Text>
-                    :
-                    <Text>{message}</Text>
-            }
 
             <List data={mapItems(guessList)}/>
         </View>
