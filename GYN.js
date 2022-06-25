@@ -45,6 +45,7 @@ function GYN(props) {
     const handleOnPress = () =>{
         const numRand = parseInt(random);
         const value = parseInt(value);
+        const [win, setWin] = useState(false);
         const text = calculateText(num, numRand);
 
         if (value === 1) {
@@ -54,7 +55,11 @@ function GYN(props) {
         if (value === 2) {
             setMax(numRand);
         }
-
+        
+        if (value === 3) {
+            setWin(true);
+        }
+        
         setNumber("");
         setMessage(text);
         setGuessList([
@@ -64,13 +69,13 @@ function GYN(props) {
         setCount(count + 1);
 
 
-        const random = generateRandomNumber(max, min);
+        random = generateRandomNumber(max, min);
     }
 
     return (
         <View style={styles.game}>
 
-            <Text>Tu numerro es {random}?</Text>
+            <Text>Tu numero es {random}?</Text>
 
             <Button
                 title="Mayor"
@@ -82,6 +87,19 @@ function GYN(props) {
                 onPress={handleOnPress}
                 value = {2}
             />
+            <Button
+                title="Correcto"
+                onPress={handleOnPress}
+                value = {3}
+            />
+            {
+                win?
+                    <Text>
+                        Tu numero era {random}
+                    </Text>
+                    :
+                    <Text>ñ</Text>
+            }
 
             <List data={mapItems(guessList)}/>
         </View>

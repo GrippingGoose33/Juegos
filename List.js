@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, Text } from 'react-native';
 
-function List(props) {
+function List({data}) {
     return (
         <FlatList
             data = {data}
