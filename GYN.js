@@ -92,14 +92,6 @@ function GYN(props) {
                 onPress={handleOnPress}
                 value = {3}
             />
-            {
-                win?
-                    <Text>
-                        Tu numero era {random}
-                    </Text>
-                    :
-                    <Text>ñ</Text>
-            }
 
             <List data={mapItems(guessList)}/>
         </View>
