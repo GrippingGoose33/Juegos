@@ -19,7 +19,7 @@ function Box({description, img, id, title}) {
             <Button
                 color="#455q64"
                 title={title}
-                onPress={() => navigation.navigate( GMN )}
+                onPress={() => navigation.navigate( id )}
             />
         </View>
     );

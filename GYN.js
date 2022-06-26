@@ -41,11 +41,11 @@ function GYN(props) {
     const [max, setMax] = useState(100);
     const [min, setMin] = useState(1)
     const random = generateRandomNumber(max, min);
+    const [win, setWin] = useState(false);
 
     const handleOnPress = () =>{
         const numRand = parseInt(random);
         const value = parseInt(value);
-        const [win, setWin] = useState(false);
         const text = calculateText(num, numRand);
 
         if (value === 1) {

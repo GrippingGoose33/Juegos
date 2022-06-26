@@ -2,32 +2,11 @@ import React from 'react';
 import {Button, StyleSheet, View, Text, Image} from 'react-native';
 //import Bottom from './Bottom';
 
-function Details({route, navigation}) {
-
-    const {title, id, description, img, stock} = route.params;
-
-    navigation.setOptions({
-        title: title,
-        headerRight:()=>{
-            <Button
-                title="Buy"
-                onPress={()=>{}}
-                disable={stock === 0}
-            />
-        }
-    })
+function Details() {
 
     return (
-        <View style = {{flex:1, justifyContent:'center', alignItems:'center', backgroundColor: "purple"}}>
-            <Image
-                style={styles.Logo}
-                source={{uri:img}}
-            />
-
-            <Text>Screen: {id}</Text>
-            <Text style= {{fontSize:20, backgroundColor: "white"}}>Producto: {description}</Text>
-
-            <Text style= {{fontSize: 15, color:"blue"}}>En stock: {stock}</Text>
+        <View>
+            <Text> Helluwu </Text>
         </View>
     );
 }
