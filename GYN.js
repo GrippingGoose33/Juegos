@@ -1,49 +1,40 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, Button, Text, TextInput} from 'react-native';
-import List from './List';
-
-function mapItems(items){
-    return items.map((value, i) => ({kay:i.toString(), value}));
-}
 
 function generateRandomNumber(max, min){
     return Math.floor(Math.random() * (max - min) + 1);
 }
 
 function GYN(props) {
-    const [message, setMessage] = useState('');
-    const [guessList, setGuessList] = useState([]);
-    const [count, setCount] = useState(0);
+    const [number, setNumber] = useState('');   
     const [max, setMax] = useState(100);
     const [min, setMin] = useState(1)
     const random = generateRandomNumber(max, min);
     const [win, setWin] = useState(false);
 
+    const handleOnChange = (newNumber) => {
+        setNumber(newNumber);
+    }
+
     const handleOnPress = () =>{
         const numRand = parseInt(random);
-        const value = parseInt(value);
+        const num =parseInt(number);
         const text = calculateText(num, numRand);
 
-        if (value === 1) {
+        if (num === 1) {
             setMin(numRand);
         }
 
-        if (value === 2) {
+        if (num === 2) {
             setMax(numRand);
         }
         
-        if (value === 3) {
+        if (num === 3) {
             setWin(true);
         }
         
         setNumber("");
         setMessage(text);
-        setGuessList([
-            numRand,
-            ...guessList
-        ]);
-        setCount(count + 1);
-
 
         random = generateRandomNumber(max, min);
     }
@@ -53,23 +44,28 @@ function GYN(props) {
 
             <Text>Tu numero es {random}?</Text>
 
-            <Button
-                title="Mayor"
-                onPress={handleOnPress}
-                value ={1}
-            />
-            <Button
-                title="Menor"
-                onPress={handleOnPress}
-                value = {2}
-            />
-            <Button
-                title="Correcto"
-                onPress={handleOnPress}
-                value = {3}
+            <Text>1=Mayor, 2=Menor, 3=Correcto</Text>
+
+            <TextInput
+                style={styles.input}
+                autoFocus
+                placeholder="Guess My Number"
+                onChangeText = {handleOnChange}
+                defaultValue = {number}
             />
 
-            <List data={mapItems(guessList)}/>
+            <Button
+                title="Seguir"
+                onPress={handleOnPress}
+            />
+            {
+                win?
+                    <Text>
+                        Felicidades, lo has adivinado en {count} intentos
+                    </Text>
+                    :
+                    <Text></Text>
+            }
         </View>
     );
 }

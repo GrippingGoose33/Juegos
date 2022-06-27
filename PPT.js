@@ -50,6 +50,7 @@ function PPT() {
         setNumber("");
         setMessage(text);
 
+        rand = randomGenerator();
     }
 
     return (
