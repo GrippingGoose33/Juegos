@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, View, Button, Text, TextInput} from 'react-native';
 //import Bottom from './Bottom';
 
@@ -44,12 +44,8 @@ function PPT() {
 
     const handleOnPress = () =>{
         const num =parseInt(number);
-        const numRand = parseInt(random);
+        const numRand = parseInt(rand);
         const text = calculateText(num, numRand);
-
-        if (num === numRand) {
-            setWin(true);
-        }
 
         setNumber("");
         setMessage(text);
@@ -86,8 +82,13 @@ const styles = StyleSheet.create({
 
     input: {
         width: 200,
-        textAlign: 'center',
+        textAlign: "center",
         marginBottom: 10
+    },
+
+    texto:{
+        textAlign:"center",
+        fontSize: 15
     }
 })
 
