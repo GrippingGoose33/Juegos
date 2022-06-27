@@ -49,7 +49,7 @@ function GYN(props) {
             <TextInput
                 style={styles.input}
                 autoFocus
-                placeholder="Guess My Number"
+                placeholder="Guess Your Number"
                 onChangeText = {handleOnChange}
                 defaultValue = {number}
             />
@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: "center",
         justifyContent: 'center',
-        width: 400
+        width: 400,
+        backgroundColor: 'green'
     },
 
     input: {

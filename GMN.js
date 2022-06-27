@@ -82,7 +82,7 @@ function GMN(props) {
             />
             {
                 win?
-                    <Text>
+                    <Text style={styles.textW}>
                         Felicidades, lo has adivinado en {count} intentos
                     </Text>
                     :
@@ -101,12 +101,19 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: "center",
         justifyContent: 'center',
-        width: 400
+        width: 400,
+        backgroundColor: 'gray'
     },
 
     input: {
         width: 200,
         textAlign: 'center',
-        marginBottom: 10
+        marginBottom: 10,
+        backgroundColor: 'red',
+    },
+
+    textW: {
+        fontSize: 15,
+        backgroundColor: 'yellow'
     }
 })

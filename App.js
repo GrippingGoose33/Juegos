@@ -9,6 +9,7 @@ import Menu from './Menu';
 import GMN from './GMN';
 import GYN from './GYN';
 import PPT from './PPT';
+import Proxi from './Proxi';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name="GMN" component={GMN}/>
         <Stack.Screen name="GYN" component={GYN}/>
         <Stack.Screen name="PPT" component={PPT}/>
+        <Stack.Screen name="buttons" component={Proxi}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
