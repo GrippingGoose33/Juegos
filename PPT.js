@@ -59,17 +59,15 @@ function PPT() {
     return (
         <View>
             <TextInput
-                placeholder="piedra=1, papel=2, tijera=3"
-                onChangeText={handleOnChange}
+                style={styles.input}
+                autoFocus
+                placeholder="Guess My Number"
+                onChangeText = {handleOnChange}
+                defaultValue = {number}
             />
             <Button
-                title="piedra"
-            />
-            <Button
-                title="papel"
-            />
-            <Button
-                title="tijera"
+                title="Continuar"
+                onPress={handleOnPress}
             />
             <Text> {message} </Text>
             <Text>{rand}</Text>
