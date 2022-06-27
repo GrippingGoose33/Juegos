@@ -6,6 +6,10 @@ import styles from './styles';
 function Home({navigation}) {
     return (
         <View style={styles.container}>
+            <Image
+                style={styles.Logo}
+                source={{uri:'https://player8.org/wp-content/uploads/2021/02/mejores-5-juegos-arcade-890x606.jpg'}}
+            />
             <Text style={styles.textH1}>Videojuegos Moviles</Text>
             <Button 
             title="ir a Menu"

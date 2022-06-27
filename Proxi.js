@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, Button, Text} from 'react-native';
+import { StyleSheet, View, Button, Text, TextInput, Image} from 'react-native';
 
 function randomGenerate(max, min){
     return Math.floor(Math.random() * (max - min) + 1);
@@ -20,7 +20,7 @@ function Proxi(props) {
     let [vida, setVida] = useState(100);
     const [vidaE, setVidaE] = useState(100);
     let random = randomGenerate(18, 5);
-    let randomE = randomGenerate(18, 5);
+    let randomE = randomGenerate(14, 5);
 
 
     const handleOnChange = (newNumber) =>{
@@ -31,7 +31,6 @@ function Proxi(props) {
         const num =parseInt(number);
         const numRand = parseInt(random);
         const numRandE = parseInt(randomE);
-        const text = calculateText(num, numRand);
 
         if (num === 1) {
             setVidaE(vidaE - numRand);
@@ -46,7 +45,6 @@ function Proxi(props) {
             textMaker(numRandE / 2);
         }
         setNumber("");
-        setMessage(text);
         setCount(count + 1);
 
     }
@@ -55,13 +53,22 @@ function Proxi(props) {
         <View styles={styles.game}>
             <Text>Ataque/Defensa</Text>
             <Text>Comandos: 1=Atacar, 2=Defender</Text>
-            <Text>Vida: {vida}</Text>
-            <Text>Vida Enemigo: {vidaE}</Text>
+            <Text style={styles.vida}>Vida: {vida}</Text>
+                        <Image
+                style={styles.imagen}
+                source={{uri:'https://c8.alamy.com/compes/r7fpap/cartoon-caballero-medieval-con-escudo-y-lanza-aislado-sobre-fondo-blanco-r7fpap.jpg'}}
+            />
+            <Text style = {styles.vida}>Vida Enemigo: {vidaE}</Text>
+            <Image
+                style={styles.imagen}
+                source={{uri:'https://img.freepik.com/vector-gratis/ilustracion-fantasma-blanco-silueta-fantasma-aislada-sobre-fondo-transparente_1441-2218.jpg?w=2000'}}
+            />
             
             <TextInput
                 placeholder="Elije"
                 onChangeText={handleOnChange}
                 defaultValue = {number}
+                style={styles.input}
             />
 
             <Button
@@ -79,19 +86,22 @@ const styles = StyleSheet.create({
     game: {
         flexDirection: 'column',
         alignItems: "center",
-        justifyContent: 'center',
+        justifyContent: "center",
         width: 400
     },
 
-    button: {
-        flexDirection: 'row',
-        alignItems: "center",
-        justifyContent: 'center',
+    vida:{
+      backgroundColor: "red"
     },
 
     input: {
         width: 200,
         textAlign: 'center',
         marginBottom: 10
-    }
+    },
+
+    imagen: {
+        width: 100,
+        height: 100,
+    },
 })
