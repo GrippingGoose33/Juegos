@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import { StyleSheet, View, Button, Text, TextInput} from 'react-native';
 //import Bottom from './Bottom';
 
-function randomGenerator() {
-    return Math.floor(Math.random() * (3 - 1) + 1)
+function randomGenerator(max, min) {
+    return Math.floor(Math.random() * (max - min) + 1)
 }
 
 function calculateText(number, random) {
@@ -31,7 +31,7 @@ function calculateText(number, random) {
     }
 }
 
-const rand = randomGenerator();
+const rand = randomGenerator(3, 1);
 
 
 function PPT() {
@@ -50,7 +50,7 @@ function PPT() {
         setNumber("");
         setMessage(text);
 
-        rand = randomGenerator();
+        rand = randomGenerator(3, 1);
     }
 
     return (
