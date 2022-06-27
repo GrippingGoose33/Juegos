@@ -10,30 +10,6 @@ function generateRandomNumber(max, min){
     return Math.floor(Math.random() * (max - min) + 1);
 }
 
-function calculateText(number, random) {
-    const soClose = 5;
-    const diff = Math.abs(random - number);
-
-    if (diff < soClose){
-        
-        if (number < random) {
-            return "Estas muy cerca! Tu numero es un poco bajo"
-        }
-        else {
-            return "Estas muy cerca! Tu numero es un poco alto"
-        }
-    }
-    else {
-        if (number < random) {
-            return "Tu numero es muy bajo"
-        }
-        else {
-            return "Tu numero es muy alto"
-        }
-    }
-}
-
-
 function GYN(props) {
     const [message, setMessage] = useState('');
     const [guessList, setGuessList] = useState([]);
