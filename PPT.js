@@ -53,7 +53,7 @@ function PPT() {
     }
 
     return (
-        <View>
+        <View style={style.game}>
             <TextInput
                 style={styles.input}
                 autoFocus
@@ -65,7 +65,7 @@ function PPT() {
                 title="Continuar"
                 onPress={handleOnPress}
             />
-            <Text> {message} </Text>
+            <Text style={style.texto}> {message} </Text>
             <Text>{rand}</Text>
             
         </View>
