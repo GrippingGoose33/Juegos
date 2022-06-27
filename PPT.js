@@ -1,34 +1,46 @@
 import React from 'react';
-import {Button, StyleSheet, View, Text, Image} from 'react-native';
+import { StyleSheet, View, Button, Text,} from 'react-native';
 //import Bottom from './Bottom';
 
-function Details() {
+function randomGenerator() {
+    return Math.floor(Math.random() * (3 - 1) + 1)
+}
+
+const rand = randomGenerator();
+
+function PPT() {
 
     return (
         <View>
-            <Text> Helluwu </Text>
+            
+            <Button
+                title="piedra"
+            />
+            <Button
+                title="papel"
+            />
+            <Button
+                title="tijera"
+            />
+            <Text> {rand} </Text>
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-
-    root: {
-        width: 150,
-        height: 150,
-        justifyContent: "center",
+    game: {
+        flexDirection: 'column',
         alignItems: "center",
-        backgroundColor: "#DC0CF5",
-        borderWidth: 1,
-        borderRadius: 0,
-        margin: 10,
-        color: "blue",
+        justifyContent: 'center',
+        width: 400
     },
 
-    Logo: {
-        width: 180,
-        height: 180,
-      },
+    input: {
+        width: 200,
+        textAlign: 'center',
+        marginBottom: 10
+    }
 })
 
-export default Details;
+export default PPT;
