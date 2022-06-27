@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, View, Button, Text} from 'react-native';
 
 function randomGenerate(max, min){
@@ -17,14 +17,13 @@ function Proxi(props) {
     const [message, setMessage] = useState('');
     const [win, setWin] = useState(false);
     const [count, setCount] = useState(0);
-    const [vida, setVida] = useState(100);
+    let [vida, setVida] = useState(100);
     const [vidaE, setVidaE] = useState(100);
-
     let random = randomGenerate(18, 5);
     let randomE = randomGenerate(18, 5);
 
 
-    const handleOnChange = () =>{
+    const handleOnChange = (newNumber) =>{
         setNumber(newNumber)
     }
 
@@ -39,17 +38,12 @@ function Proxi(props) {
             setVida(vida - numRandE);
             textMaker(numRandE);
         }
-        if (num === 3){
-            setVida(vida + 40);
-            setVida(vida - numRandE);
-            textMaker(numRandE);
-        }
         if (num === 2) {
-            setVida(vida - (numRandE/1.5));
+            setVida(vida - (numRandE/2));
         }
         else{
             setVida(vida - numRandE);
-            textMaker(numRandE / 1.5);
+            textMaker(numRandE / 2);
         }
         setNumber("");
         setMessage(text);
@@ -60,13 +54,14 @@ function Proxi(props) {
     return (
         <View styles={styles.game}>
             <Text>Ataque/Defensa</Text>
-            <Text>Comandos: 1=Atacar, 2=Defender, 3=Curar "Maximo 3"</Text>
+            <Text>Comandos: 1=Atacar, 2=Defender</Text>
             <Text>Vida: {vida}</Text>
             <Text>Vida Enemigo: {vidaE}</Text>
             
             <TextInput
                 placeholder="Elije"
                 onChangeText={handleOnChange}
+                defaultValue = {number}
             />
 
             <Button

@@ -35,7 +35,7 @@ export default function App() {
         <Stack.Screen name="GMN" component={GMN}/>
         <Stack.Screen name="GYN" component={GYN}/>
         <Stack.Screen name="PPT" component={PPT}/>
-        <Stack.Screen name="buttons" component={Proxi}/>
+        <Stack.Screen name="Proxi" component={Proxi}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

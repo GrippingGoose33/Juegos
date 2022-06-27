@@ -7,11 +7,11 @@ function generateRandomNumber(max, min){
 
 function GYN(props) {
     const [number, setNumber] = useState('');   
-    const [max, setMax] = useState(0);
-    const [min, setMin] = useState(1);
+    let [max, setMax] = useState(0);
+    let [min, setMin] = useState(1);
     const [win, setWin] = useState(false);
     let random = generateRandomNumber(max, min);
-    
+
     const handleOnChange = (newNumber) => {
         setNumber(newNumber);
     }
