@@ -37,20 +37,18 @@ const rand = randomGenerator(3, 1);
 function PPT() {
     const [number, setNumber] = useState('');
     const [message, setMessage] = useState('');
-    
+    const numRand = parseInt(rand);
+
     const handleOnChange = (newNumber) => {
         setNumber(newNumber);
     }
 
     const handleOnPress = () =>{
         const num =parseInt(number);
-        const numRand = parseInt(rand);
         const text = calculateText(num, numRand);
 
         setNumber("");
         setMessage(text);
-
-        rand = randomGenerator(3, 1);
     }
 
     return (

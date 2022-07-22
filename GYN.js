@@ -19,7 +19,6 @@ function GYN(props) {
     const handleOnPress = () =>{
         const numRand = parseInt(random);
         const num =parseInt(number);
-        const text = calculateText(num, numRand);
 
         if (num === 1) {
             setMin(numRand);
@@ -34,7 +33,6 @@ function GYN(props) {
         }
         
         setNumber("");
-        setMessage(text);
 
         random = generateRandomNumber(max, min);
     }
